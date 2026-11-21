@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Tajawal:wght@400;500;700&display=swap');
+
+:root {
+  --primary: #ff6b35;
+  --on-primary: #ffffff;
+  --secondary: #2ec4b6;
+  --on-secondary: #1a1412;
+  --accent: #ffd166;
+  --on-accent: #2d2420;
+  --surface: #fff8f0;
+  --surface-elevated: #ffffff;
+  --on-surface: #2d2420;
+  --on-surface-variant: #6b5e57;
+  --outline: #e8ddd4;
+  --success: #06d6a0;
+  --error: #ef476f;
+  --radius-card: 12px;
+  --radius-sheet: 24px;
+  --radius-chip: 999px;
+  --shadow-card: 0 4px 16px rgba(45, 36, 32, 0.08);
+  --font-en: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-ar: 'Tajawal', 'Plus Jakarta Sans', sans-serif;
+}
+
+[data-theme='dark'] {
+  --primary: #ff8c5a;
+  --on-primary: #1a1412;
+  --secondary: #3dd9ca;
+  --accent: #ffe08a;
+  --surface: #1a1412;
+  --surface-elevated: #2d2420;
+  --on-surface: #f5ede8;
+  --on-surface-variant: #b8a99f;
+  --outline: #3d3530;
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+body.rtl {
+  --font-body: var(--font-ar);
+  direction: rtl;
+}
+
+body.ltr {
+  --font-body: var(--font-en);
+  direction: ltr;
+}
+
+* {
+  box-sizing: border-box;
+}

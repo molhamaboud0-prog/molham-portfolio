@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FlavorHub — Figma screen reference</title>
+    <link rel="stylesheet" href="tokens.css" />
+    <link rel="stylesheet" href="components.css" />
+    <link rel="stylesheet" href="screens.css" />
+  </head>
+  <body class="ltr">
+    <div class="layout">
+      <aside class="sidebar">
+        <h1>FlavorHub</h1>
+        <p>Mobile UI reference for Figma (393×852). Click screens or use in-phone navigation.</p>
+        <div class="sidebar-controls">
+          <button type="button" id="btn-en">EN LTR</button>
+          <button type="button" id="btn-ar">AR RTL</button>
+          <button type="button" id="btn-light">Light</button>
+          <button type="button" id="btn-dark">Dark</button>
+          <button type="button" id="btn-flow-order">Demo: Order</button>
+          <button type="button" id="btn-flow-book">Demo: Book</button>
+        </div>
+        <nav id="screen-nav"></nav>
+      </aside>
+      <main class="main">
+        <div class="phone">
+          <div class="status-bar"><span>9:41</span><span>●●●</span></div>
+          <div class="phone-inner" id="phone-screens"></div>
+        </div>
+        <div class="flow-hint" id="flow-hint"></div>
+      </main>
+    </div>
+    <script src="menu-data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

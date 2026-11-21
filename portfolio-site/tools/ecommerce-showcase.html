@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>E-commerce showcase</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: Inter, system-ui, sans-serif;
+        background: #111;
+      }
+      .phone {
+        width: 393px;
+        height: 852px;
+        border-radius: 36px;
+        overflow: hidden;
+        background: #f5f7fa;
+        border: 1px solid #d5dee9;
+        position: relative;
+      }
+      .status {
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #0b1726;
+      }
+      .header {
+        background: #0b1f3a;
+        color: #fff;
+        padding: 12px 16px 14px;
+        font-weight: 700;
+        font-size: 18px;
+      }
+      .scroll {
+        height: calc(852px - 44px - 46px - 64px);
+        overflow: hidden;
+        padding: 0 0 8px;
+      }
+      .search {
+        margin: 12px 16px;
+        padding: 12px 14px;
+        background: #fff;
+        border: 1px solid #d5dee9;
+        border-radius: 16px;
+        color: #5b6b7c;
+        font-size: 15px;
+        box-shadow: 0 2px 8px rgba(11, 31, 58, 0.06);
+      }
+      .hero {
+        margin: 0 16px 16px;
+        border-radius: 20px;
+        overflow: hidden;
+        position: relative;
+        min-height: 180px;
+        background: linear-gradient(135deg, #0b1f3a, #163a5f, #2b6cb0);
+      }
+      .hero img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.45;
+      }
+      .hero-text {
+        position: relative;
+        padding: 20px;
+        color: #fff;
+      }
+      .hero-text h2 {
+        margin: 0;
+        font-size: 22px;
+      }
+      .hero-text p {
+        margin: 8px 0 12px;
+        font-size: 13px;
+        opacity: 0.9;
+      }
+      .btn {
+        display: inline-block;
+        background: #fff;
+        color: #0b1f3a;
+        padding: 8px 18px;
+        border-radius: 999px;
+        font-weight: 600;
+        font-size: 13px;
+      }
+      .section-title {
+        margin: 8px 16px 10px;
+        font-weight: 700;
+        color: #0b1726;
+        font-size: 16px;
+      }
+      .row {
+        display: flex;
+        gap: 10px;
+        padding: 0 16px 12px;
+        overflow: hidden;
+      }
+      .card {
+        flex: 0 0 120px;
+        background: #fff;
+        border-radius: 14px;
+        border: 1px solid #d5dee9;
+        overflow: hidden;
+      }
+      .card img {
+        width: 100%;
+        height: 80px;
+        object-fit: cover;
+      }
+      .card p {
+        margin: 0;
+        padding: 8px;
+        font-size: 11px;
+        font-weight: 600;
+        color: #0b1726;
+      }
+      .card .price {
+        padding: 0 8px 8px;
+        font-size: 12px;
+        color: #1b4f8a;
+        font-weight: 700;
+      }
+      .grid2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        padding: 8px 16px;
+      }
+      .cat {
+        background: #fff;
+        border-radius: 14px;
+        border: 1px solid #d5dee9;
+        overflow: hidden;
+      }
+      .cat img {
+        width: 100%;
+        height: 72px;
+        object-fit: cover;
+      }
+      .cat span {
+        display: block;
+        padding: 8px;
+        font-size: 12px;
+        font-weight: 600;
+      }
+      .cart-item {
+        margin: 8px 16px;
+        padding: 10px;
+        background: #fff;
+        border-radius: 14px;
+        border: 1px solid #d5dee9;
+        display: flex;
+        gap: 10px;
+      }
+      .cart-item img {
+        width: 64px;
+        height: 64px;
+        border-radius: 10px;
+        object-fit: cover;
+      }
+      .summary {
+        margin: 12px 16px;
+        padding: 12px;
+        background: #e9eff6;
+        border-radius: 14px;
+        font-size: 13px;
+      }
+      .product-hero img {
+        width: 100%;
+        height: 260px;
+        object-fit: cover;
+      }
+      .product-body {
+        padding: 16px;
+      }
+      .product-body h2 {
+        margin: 0 0 6px;
+        font-size: 20px;
+        color: #0b1726;
+      }
+      .list {
+        margin: 8px 16px;
+        background: #fff;
+        border-radius: 14px;
+        border: 1px solid #d5dee9;
+        overflow: hidden;
+      }
+      .list div {
+        padding: 14px 16px;
+        border-bottom: 1px solid #e9eff6;
+        font-size: 14px;
+        color: #0b1726;
+      }
+      .tabs {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 64px;
+        background: #fff;
+        border-top: 1px solid #d5dee9;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 10px;
+        color: #5b6b7c;
+      }
+      .tabs .on {
+        color: #1b4f8a;
+        font-weight: 700;
+      }
+      .phone {
+        margin: 0 auto;
+      }
+      .phone[data-active="false"] {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="stage">
+      <div class="phone" data-shot="home" data-active="true">
+        <div class="status"><span>9:41</span><span>▮▮▮</span></div>
+        <div class="header">Home</div>
+        <div class="scroll">
+          <div class="search">Search groceries…</div>
+          <div class="hero">
+            <img
+              src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80"
+              alt=""
+            />
+            <div class="hero-text">
+              <h2>Fresh groceries delivered</h2>
+              <p>Quality produce and essentials to your door.</p>
+              <span class="btn">Shop Now</span>
+            </div>
+          </div>
+          <div class="section-title">Trending</div>
+          <div class="row">
+            <div class="card">
+              <img
+                src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?auto=format&fit=crop&w=400&q=80"
+                alt=""
+              />
+              <p>Fresh Red Apples</p>
+              <div class="price">$3.50</div>
+            </div>
+            <div class="card">
+              <img
+                src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=400&q=80"
+                alt=""
+              />
+              <p>Ripe Bananas</p>
+              <div class="price">$2.20</div>
+            </div>
+            <div class="card">
+              <img
+                src="https://images.unsplash.com/photo-1547514701-42782101795e?auto=format&fit=crop&w=400&q=80"
+                alt=""
+              />
+              <p>Juicy Oranges</p>
+              <div class="price">$4.10</div>
+            </div>
+          </div>
+        </div>
+        <div class="tabs">
+          <span class="on">Home</span><span>Categories</span><span>Cart</span><span>Profile</span>
+        </div>
+      </div>
+
+      <div class="phone" data-shot="categories" data-active="false">
+        <div class="status"><span>9:41</span><span>▮▮▮</span></div>
+        <div class="header">Categories</div>
+        <div class="scroll">
+          <div class="grid2">
+            <div class="cat">
+              <img
+                src="https://images.unsplash.com/photo-1619566636858-adf3ef46400b?auto=format&fit=crop&w=400&q=80"
+                alt=""
+              /><span>Fruits</span>
+            </div>
+            <div class="cat">
+              <img
+                src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=400&q=80"
+                alt=""
+              /><span>Vegetables</span>
+            </div>
+            <div class="cat">
+              <img
+                src="https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=400&q=80"
+                alt=""
+              /><span>Dairy</span>
+            </div>
+            <div class="cat">
+              <img
+                src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=400&q=80"
+                alt=""
+              /><span>Bakery</span>
+            </div>
+          </div>
+        </div>
+        <div class="tabs">
+          <span>Home</span><span class="on">Categories</span><span>Cart</span><span>Profile</span>
+        </div>
+      </div>
+
+      <div class="phone" data-shot="cart" data-active="false">
+        <div class="status"><span>9:41</span><span>▮▮▮</span></div>
+        <div class="header">Cart</div>
+        <div class="scroll">
+          <div class="cart-item">
+            <img
+              src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?auto=format&fit=crop&w=200&q=80"
+              alt=""
+            />
+            <div>
+              <strong>Fresh Red Apples</strong><br />
+              <span style="color: #1b4f8a">$3.50 × 2</span>
+            </div>
+          </div>
+          <div class="cart-item">
+            <img
+              src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=200&q=80"
+              alt=""
+            />
+            <div>
+              <strong>Ripe Bananas</strong><br />
+              <span style="color: #1b4f8a">$2.20 × 1</span>
+            </div>
+          </div>
+          <div class="summary">
+            Subtotal: $9.20<br />
+            <strong>Total: $9.20</strong>
+          </div>
+          <span class="btn" style="margin: 0 16px; display: block; text-align: center">Checkout</span>
+        </div>
+        <div class="tabs">
+          <span>Home</span><span>Categories</span><span class="on">Cart</span><span>Profile</span>
+        </div>
+      </div>
+
+      <div class="phone" data-shot="product" data-active="false">
+        <div class="status"><span>9:41</span><span>▮▮▮</span></div>
+        <div class="header">Product</div>
+        <div class="scroll" style="height: calc(852px - 44px - 46px)">
+          <div class="product-hero">
+            <img
+              src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?auto=format&fit=crop&w=800&q=80"
+              alt=""
+            />
+          </div>
+          <div class="product-body">
+            <h2>Fresh Red Apples</h2>
+            <p style="color: #1b4f8a; font-weight: 700; font-size: 18px">$3.50</p>
+            <p style="color: #5b6b7c; font-size: 13px">
+              Crisp sweet red apples, perfect for snacking or juice.
+            </p>
+            <span class="btn">Add to Cart</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="phone" data-shot="profile" data-active="false">
+        <div class="status"><span>9:41</span><span>▮▮▮</span></div>
+        <div class="header">Profile</div>
+        <div class="scroll">
+          <div class="list">
+            <div>My Orders</div>
+            <div>Language · English</div>
+            <div>Dark Mode</div>
+            <div>About Us</div>
+            <div>Contact Us</div>
+            <div style="color: #c0392b">Logout</div>
+          </div>
+        </div>
+        <div class="tabs">
+          <span>Home</span><span>Categories</span><span>Cart</span><span class="on">Profile</span>
+        </div>
+      </div>
+
+      <div class="phone" data-shot="orders" data-active="false">
+        <div class="status"><span>9:41</span><span>▮▮▮</span></div>
+        <div class="header">My Orders</div>
+        <div class="scroll">
+          <div class="cart-item">
+            <img
+              src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?auto=format&fit=crop&w=200&q=80"
+              alt=""
+            />
+            <div>
+              <strong>Order #1042</strong><br />
+              <span style="color: #0d9488">Delivered</span> · $9.20
+            </div>
+          </div>
+          <div class="cart-item">
+            <img
+              src="https://images.unsplash.com/photo-1547514701-42782101795e?auto=format&fit=crop&w=200&q=80"
+              alt=""
+            />
+            <div>
+              <strong>Order #1038</strong><br />
+              <span style="color: #1b4f8a">Processing</span> · $14.30
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

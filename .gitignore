@@ -1,0 +1,43 @@
+# OS
+.DS_Store
+**/.DS_Store
+
+# Dependencies
+**/node_modules/
+
+# Expo / React Native
+**/.expo/
+**/dist/
+**/web-build/
+**/.metro-health-check*
+
+# Mobile builds (large binaries)
+**/*.apk
+**/*.aab
+**/*.ipa
+
+# Env & secrets
+**/.env
+**/.env.*
+**/*.pem
+**/*.key
+**/*.jks
+**/*.p12
+
+# IDE / local
+**/.idea/
+**/.vscode/
+.cursor/
+
+# Test / coverage
+**/coverage/
+**/*.tsbuildinfo
+
+# Playwright (portfolio-site)
+portfolio-site/test-results/
+portfolio-site/playwright-report/
+
+# Logs
+*.log
+npm-debug.log*
+/tmp/Ecommerce/Mobile/
